@@ -312,6 +312,28 @@
     padding-left: 1.5rem;
     position: relative;
 }
+.cta-button {
+    background-color: #0A3778; /* Couleur de base */
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    margin-left: 1em;
+}
+
+.cta-button:hover {
+    background-color: #0c4a9e; /* Couleur plus claire au survol */
+}
+
+/* Style pour le conteneur du QR code */
+#qrCodePopup {
+    display: none; /* Masqué par défaut */
+    text-align: center;
+    margin-top: 10px; /* Espacement par rapport au bouton */
+}
 
 .card-text li::before {
     content: '•'; /* Custom bullet point */
@@ -997,13 +1019,21 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
-            <button class="hamburger" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+        <!-- Bouton pour télécharger l'application -->
+        <button id="downloadButton" class="cta-button" onclick="toggleQRCode()">Télécharger l'application</button>
+
+        <!-- Conteneur du QR code, qui s'affichera en dessous du bouton -->
+        <div id="qrCodePopup">
+            <img src="https://github.com/votre-nom-utilisateur/nom-du-depot/blob/main/qrcode_App_VP.png?raw=true" alt="QR Code">
         </div>
-    </header>
+
+        <button class="hamburger" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</header>
     <section class="hero">
         <div style="text-align: center; padding: 3em 1em;">
             <h1 style="font-size: 2.5em; color: white; margin-bottom: 0.5em;">Village Padel - Installation et Automatisation de Terrains de Padel</h1>
@@ -1179,6 +1209,20 @@
             margin: 20
         });
     });
+</script>
+<script>
+        function toggleQRCode() {
+            const qrPopup = document.getElementById('qrCodePopup');
+            const downloadButton = document.getElementById('downloadButton');
+            
+            if (qrPopup.style.display === 'none' || qrPopup.style.display === '') {
+                qrPopup.style.display = 'block';
+                downloadButton.textContent = 'Scannez moi';
+            } else {
+                qrPopup.style.display = 'none';
+                downloadButton.textContent = 'Télécharger l\'application';
+            }
+        }
 </script>
 </body>
 </html>
