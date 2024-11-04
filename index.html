@@ -964,6 +964,18 @@
         .store-links img.google-play {
             height: 50px; /* Set a specific height for both icons */
         }
+<style>
+    .qr-code {
+        width: 150px;
+        height: auto;
+        margin-top: 10px;
+        border: 2px solid #0c4a9e;
+        border-radius: 10px;
+        padding: 5px;
+        background-color: white;
+    }
+        
+</style>
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -1030,7 +1042,7 @@
 
         <!-- Conteneur du QR code, qui s'affichera en dessous du bouton -->
         <div id="qrCodePopup">
-            <img src="https://github.com/Fab3146/Village-Padel-Flavien/blob/main/qrcode_App_VP.png?raw=true" alt="QR Code">
+            <img src="https://github.com/Fab3146/Village-Padel-Flavien/blob/main/qrcode_App_VP.png?raw=true" alt="QR Code" class="qr-code">
         </div>
 
         <button class="hamburger" aria-label="Toggle menu">
