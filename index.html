@@ -6,14 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Village Padel</title>
     <style>
-    .qr-code {
-        width: 150px;
-        height: auto;
-        margin-top: 10px;
-        border: 2px solid #0c4a9e;
-        border-radius: 10px;
-        padding: 5px;
-        background-color: white;
+        .download-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#downloadButton {
+    margin-bottom: 10px;
+    background-color: #0c4a9e;
+    color: white;
+    border: 2px solid #0c4a9e;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+#downloadButton:hover {
+    background-color: #1a73e8;
+}
+
+.qr-code {
+    width: 150px;
+    height: auto;
+    margin-top: 10px;
+    border: 2px solid #0c4a9e;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: white;
+    
     }
        
     <style>
@@ -1038,7 +1060,10 @@
                 </ul>
             </nav>
         <!-- Bouton pour télécharger l'application -->
-        <button id="downloadButton" class="cta-button" onclick="toggleQRCode()">Télécharger l'application</button>
+        <div class="download-section">
+    <button id="downloadButton" onclick="toggleQRCode()">Télécharger l'application</button>
+    <img src="https://github.com/TON_DEPOT/qrcode_App_VP.png?raw=true" alt="QR Code" class="qr-code" id="qrCodeImage" style="display: none;">
+</div>
 
         <!-- Conteneur du QR code, qui s'affichera en dessous du bouton -->
         <div id="qrCodePopup">
@@ -1228,19 +1253,19 @@
         });
     });
 </script>
-<script>
-        function toggleQRCode() {
-            const qrPopup = document.getElementById('qrCodePopup');
-            const downloadButton = document.getElementById('downloadButton');
-            
-            if (qrPopup.style.display === 'none' || qrPopup.style.display === '') {
-                qrPopup.style.display = 'block';
-                downloadButton.textContent = 'Scannez moi';
-            } else {
-                qrPopup.style.display = 'none';
-                downloadButton.textContent = 'Télécharger l\'application';
-            }
-        }
+    <script>
+function toggleQRCode() {
+    var qrCodeImage = document.getElementById("qrCodeImage");
+    var downloadButton = document.getElementById("downloadButton");
+    if (qrCodeImage.style.display === "none") {
+        qrCodeImage.style.display = "block";
+        downloadButton.textContent = "Scannez pour télécharger";
+    } else {
+        qrCodeImage.style.display = "none";
+        downloadButton.textContent = "Télécharger l'application";
+    }
+}
 </script>
+     
 </body>
 </html>
