@@ -1275,3 +1275,75 @@
     </script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Votre site</title>
+    <!-- Lien vers votre fichier CSS -->
+    <link rel="stylesheet" href="votre-fichier.css">
+    <style>
+      /* CSS pour le bouton et QR code */
+      .download-section {
+          display: flex;
+          align-items: center;
+      }
+
+      #downloadButton {
+          margin-bottom: 10px;
+          background-color: #0c4a9e;
+          color: white;
+          border: 2px solid #0c4a9e;
+          border-radius: 20px;
+          padding: 10px 20px;
+          font-size: 1em;
+          cursor: pointer;
+      }
+
+      #downloadButton:hover {
+          background-color: #1a73e8;
+      }
+
+      .qr-code {
+          position: absolute; /* Position absolue pour éviter d'élargir le bandeau */
+          top: 80px; /* Ajustez cette valeur pour placer le QR code sous le bouton */
+          left: 50%;
+          transform: translateX(-50%);
+          width: 150px;
+          height: auto;
+          border: 2px solid #0c4a9e;
+          border-radius: 10px;
+          padding: 5px;
+          background-color: white;
+          display: none; /* QR code masqué par défaut */
+      }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Contenu de l'en-tête : logo, liens de navigation et bouton -->
+        <div class="download-section">
+            <button id="downloadButton" onclick="toggleQRCode()">Télécharger l'application</button>
+        </div>
+    </header>
+
+    <!-- QR code placé en dehors de l'en-tête -->
+    <img src="https://github.com/TON_DEPOT/qrcode_App_VP.png?raw=true" alt="QR Code" class="qr-code" id="qrCodeImage">
+
+    <!-- Votre contenu principal ici -->
+
+    <script>
+    function toggleQRCode() {
+        var qrCodeImage = document.getElementById("qrCodeImage");
+        var downloadButton = document.getElementById("downloadButton");
+        if (qrCodeImage.style.display === "none") {
+            qrCodeImage.style.display = "block";
+            downloadButton.textContent = "Scannez pour télécharger";
+        } else {
+            qrCodeImage.style.display = "none";
+            downloadButton.textContent = "Télécharger l'application";
+        }
+    }
+    </script>
+</body>
+</html>
