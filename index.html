@@ -415,19 +415,25 @@
         text-align: center;
         margin-top: 3rem;
     }
-    .cta-button {
-        display: inline-block;
-        background-color: #0A3778;
-        color: white;
-        padding: 1rem 2rem;
-        border-radius: 30px;
-        text-decoration: none;
-        font-weight: bold;
-        transition: background-color 0.3s ease;
-    }
-    .cta-button:hover {
-        background-color: #0c4a9e;
-    }
+.cta-button {
+    background-color: #0A3778; /* Couleur de fond */
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border: 2px solid #0c4a9e; /* Bordure bleu clair */
+    border-radius: 30px; /* Bordure arrondie */
+    font-size: 1.2rem; /* Taille de la police */
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    margin-left: 1em;
+}
+
+.cta-button:hover {
+    background-color: #0c4a9e; /* Couleur plus claire au survol */
+    border-color: #0c4a9e; /* Garder la bordure de la même couleur */
+}
     .partnership-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -1024,7 +1030,7 @@
 
         <!-- Conteneur du QR code, qui s'affichera en dessous du bouton -->
         <div id="qrCodePopup">
-            <img src="https://github.com/Fab3146/Village-Padel-Flavien/blob/ad678169d360cd8d8896e9588597569a288f3e36/qrcode_App_VP.png" alt="QR Code">
+            <img src="https://github.com/Fab3146/Village-Padel-Flavien/blob/main/qrcode_App_VP.png?raw=true" alt="QR Code">
         </div>
 
         <button class="hamburger" aria-label="Toggle menu">
